@@ -25,7 +25,7 @@ On each turn:
 
 ![](https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/cards.jpg)
 
-<sup align="center">Some examples of cards in Fuse.</sup>
+<p align="center"><sup>Some examples of cards in Fuse.</sup></p>
 
 Representing bomb cards is a little bit involved -- while for humans intuiting what each card means is pretty straightforward after learning the 4 or 5 different kinds of constraints, it's not so easy for a program!
 
