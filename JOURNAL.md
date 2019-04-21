@@ -114,3 +114,17 @@ Constraints can be unary (affecting one target), binary (relating two targets to
 Implementation questions:
 - Should e.g. triple-equality cards be represented as a ternary target (A = B = C) or two binary targets (A = B, B = C)?
 - Should math things be implemented using a generic "math constraint" where you can specify an equation?
+
+----
+
+How to define Sass variables that can be reused across components:
+
+> What we do, is that we define a base.sass, that does not generates any CSS but only defines global variables.
+>
+> This stylesheet is then imported on top of the component sass stylesheets.
+>
+> @import "./src/assets/private/sass/base";
+>
+> It does not generate any CSS overhead in the components, you can leave ViewEncapsulation enabled and all is good.
+>
+> <p align="right"><sup>-- https://github.com/angular/angular-cli/issues/1253#issuecomment-305972033</sup></p>
