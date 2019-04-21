@@ -19,7 +19,11 @@ On each turn:
   - Replenish the Market
   - `while is fuse card: handle fuse card`
 
-#### Does anything need to be changed to accomodate the digital format?
+#### Changes or noteworthy things about the digital format
+
+The two-stack bomb card (6 points) should have the stacks staggered.
+
+Stack and pyramid cards will extend a bit above the edge of the card
 
 ### Card representation
 
@@ -47,12 +51,25 @@ I think the thing to do is represent card in terms of:
     - Arrows for stacks
 - Mathematical symbols (`+` `>` `=` `≠`) that go between Slots
 
-**Terminology: Slots vs Targets. Also, how stacks and pyramids work.** A Slot is a picture of a place where a die can go. A Target is a place where a die can go. These overlap, but not completely: Most Slots are Targets (& most Targets are Slots), but e.g. a stack card will look like:
+**Terminology: Slots vs Targets. Also, how stacks and pyramids work.**
+- A Slot is a component that shows a place where a die can go.
+  - Most are also Targets: places where dice can actually go. Non-target slots are purely visual.
+  - Some slots can be smaller or bigger. Some small slots are non-targets (in stacks and pyramids), and some are targets (in "greater than"/"less than" cards).
+  - For stacks and pyramids, some slots are "ghost"-styled.
+
+To make this clearer, here's a diagram:
 
 ```
- -------------------------------------------
-|                                           |
-|                                           |
+      ........
+     :        :
+     :        :
+     :        :
+     :       F:
+      ........
+     :        :
+ ----:--------:-----------------------------
+|    :        :                             |
+|    :       E:                             |
 |     --------                              |
 |    |        |      ----   ----   ----     |
 |    |        |     |    | |    | |    |    |
@@ -63,10 +80,17 @@ I think the thing to do is represent card in terms of:
 |                                           |
  -------------------------------------------
 
-- A is a Slot and a Target.
-- B, C, and D are smaller slots that are purely visual (i.e. not Targets)
-- Above A are two invisible(?) Targets where the rest of the stack goes.
+ABCDEF are all Slots, but of different kinds:
+
+- A, E, and F are targets.
+- E and F are "ghost"-styled.
+- B, C, and D are "small"-styled and non-targets.
 ```
+
+Maybe it should actually be:
+
+- Slots can be styled as "normal" or "ghost" (ghost slots are for stacks and pyramids)
+- All targets are slots, but not all slots are targets
 
 #### Constraints
 
