@@ -94,7 +94,7 @@ Maybe it should actually be:
 
 #### Constraints
 
-Whenever you place a die, the game will check constraints and reject the placement if needed.
+Whenever you place a die, the game will check constraints and reject the placement if needed. For most constraints, this is probably fine, but for stack/pyramid constraints, the game probably should be a little more proactive (i.e. don't make it possible to even try to place dice in the wrong order in a stack)
 
 Constraints can be unary (affecting one target), binary (relating two targets to one another), ternary, ...
 
