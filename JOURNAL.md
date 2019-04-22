@@ -156,3 +156,10 @@ Gradient generator: http://www.colorzilla.com/gradient-editor/
 
 Not sure what the right way to style stuff inside `ng-content` is, but here are some options:
 https://stackoverflow.com/questions/41090302/how-to-style-ng-content/41090797
+
+----
+
+Interesting generalizable UI question: If you have a collection of items of different colors/contents, how do you show "selection" or other state on these items?
+- This came up in Bookworm as "how do I show which date I'm filtering by?"
+- This exists in Google Photos -- their solution is to shrink the selected items
+- In Fuse, I need a way to make slots that have no dice stand out visually from slots that do have dice
