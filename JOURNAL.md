@@ -151,3 +151,8 @@ N.B. One uses src and the other does not! No idea why. Also not sure about relat
 I love emojis as favicons! https://favicon.io/emoji-favicons/
 
 Gradient generator: http://www.colorzilla.com/gradient-editor/
+
+----
+
+Not sure what the right way to style stuff inside `ng-content` is, but here are some options:
+https://stackoverflow.com/questions/41090302/how-to-style-ng-content/41090797
