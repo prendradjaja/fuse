@@ -145,3 +145,7 @@ Learned: How to include images (and background images) in an Angular project!
 - `background: url(src/assets/foo.png)`
 
 N.B. One uses src and the other does not! No idea why. Also not sure about relative/absolute URLs etc here, but this works at least.
+
+----
+
+I love emojis as favicons! https://favicon.io/emoji-favicons/
