@@ -10,10 +10,20 @@
   }
 
   .actual-card {
+    background: darkslategrey;
+    display: flex;
+    justify-content: space-around; // or space-evenly?
+    align-items: center;
+
     box-sizing: border-box;
     border: gray 2px solid;
     border-radius: 8px;
     width: $card-width;
     height: $card-height;
+  }
+  /deep/ .math {
+    // todo is /deep/ the right way to style inside ng-content?
+    // https://stackoverflow.com/questions/41090302/how-to-style-ng-content/41090797
+    width: $math-width;
   }
 }
