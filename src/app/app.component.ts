@@ -14,6 +14,16 @@ export interface Die {
   number: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
+const ALL_BOMB_CARDS = [
+  {
+    items: "target.five, neq, target.five, eq, target.five",
+    constraints: [
+      "neq-color 1 2", //
+      "eq-color 2 3"
+    ]
+  }
+];
+
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
