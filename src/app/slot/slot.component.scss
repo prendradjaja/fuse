@@ -74,6 +74,7 @@
     border-radius: 8px; // todo: Should the border of the slot "below" the die peek out?
     color: white;
     font-weight: bold;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
     text-align: center;
     line-height: $slot-height;
