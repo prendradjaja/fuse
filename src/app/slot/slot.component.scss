@@ -1,15 +1,59 @@
 @import "src/variables.scss";
 
 :host {
-  display: block;
-  box-sizing: border-box;
+  .actual-slot {
+    display: block;
+    box-sizing: border-box;
 
-  border: 2px solid black;
-  height: $slot-height;
-  width: $slot-width;
+    border: 2px solid black;
+    height: $slot-height;
+    width: $slot-width;
 
-  &.five-color {
-    background-image: url(src/assets/five-color.png);
-    background-size: cover;
+    &.five-color {
+      background-image: url(src/assets/five-color.png);
+      background-size: cover;
+    }
+
+    @each $header, $size in (h1: 2em, h2: 1.5em, h3: 1.2em) {
+      #{$header} {
+        font-size: $size;
+      }
+    }
+
+    @each $color1Name, $color1 in $colors {
+      @each $color2Name, $color2 in $colors {
+        &.two-color-#{$color1Name}-#{$color2Name} {
+          background: -moz-linear-gradient(
+            -45deg,
+            $color1 0%,
+            $color1 48%,
+            white 49%,
+            white 51%,
+            $color2 52%,
+            $color2 100%
+          ); /* FF3.6-15 */
+          background: -webkit-linear-gradient(
+            -45deg,
+            $color1 0%,
+            $color1 48%,
+            white 49%,
+            white 51%,
+            $color2 52%,
+            $color2 100%
+          ); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(
+            135deg,
+            $color1 0%,
+            $color1 48%,
+            white 49%,
+            white 51%,
+            $color2 52%,
+            $color2 100%
+          ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+          // Gradient generated with http://www.colorzilla.com/gradient-editor/
+        }
+      }
+    }
   }
 }

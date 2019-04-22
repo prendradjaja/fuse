@@ -13,4 +13,10 @@ $green: #06ad1a;
 $blue: #115edb;
 $black: black;
 
-$images: url(src/assets/equal.svg) url(src/assets/not-equal.svg);
+$colors: (
+  red: $red,
+  yellow: $yellow,
+  green: $green,
+  blue: $blue,
+  black: $black
+);

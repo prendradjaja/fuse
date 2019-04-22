@@ -1,4 +1,13 @@
-import { Component, OnInit, Input, HostBinding } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  HostBinding,
+  ViewChild,
+  ElementRef,
+  Renderer2
+} from "@angular/core";
+import { DieColor } from "../app.component";
 
 @Component({
   selector: "slot",
@@ -6,11 +15,22 @@ import { Component, OnInit, Input, HostBinding } from "@angular/core";
   styleUrls: ["./slot.component.scss"]
 })
 export class SlotComponent implements OnInit {
-  @HostBinding("class.five-color")
   @Input()
   fiveColor: boolean;
 
-  constructor() {}
+  @Input()
+  twoColor: string;
 
-  ngOnInit() {}
+  @ViewChild("actualSlot")
+  actualSlot: ElementRef;
+
+  constructor(private renderer: Renderer2) {}
+
+  ngOnInit() {
+    if (this.twoColor) {
+      const [color1, color2] = this.twoColor.split(",").map(x => x.trim());
+      const twoColorClass = `two-color-${color1}-${color2}`;
+      this.renderer.addClass(this.actualSlot.nativeElement, twoColorClass);
+    }
+  }
 }

@@ -149,3 +149,5 @@ N.B. One uses src and the other does not! No idea why. Also not sure about relat
 ----
 
 I love emojis as favicons! https://favicon.io/emoji-favicons/
+
+Gradient generator: http://www.colorzilla.com/gradient-editor/
