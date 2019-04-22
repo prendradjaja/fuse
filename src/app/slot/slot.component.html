@@ -1,3 +1,17 @@
-<div #actualSlot class="actual-slot" [ngClass]="{
-  'five-color': fiveColor
-}"></div>
+<div class="white">
+  <div #actualSlot
+      class="actual-slot"
+      [ngClass]="{
+        'five-color': fiveColor,
+        'hide': !!die
+      }">
+  </div>
+</div>
+<div #dieEl
+    class="die"
+    [ngClass]="{
+      'hide': !die
+    }">
+  <!-- todo pips instead of number -->
+  {{ die && die.number }}
+</div>

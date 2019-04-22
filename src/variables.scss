@@ -1,4 +1,7 @@
 // todo: Will this file get compiled? My intent is to avoid generating an CSS (by only defining variables to be used in component stylesheets)
+
+// Geometry --------------------------------
+
 $card-aspect-ratio: 357 / 251;
 $card-width: 357px;
 $card-height: $card-width / $card-aspect-ratio;
@@ -9,8 +12,15 @@ $slot-height: $slot-width;
 
 $math-width: $card-width / 15;
 
+$number-size: 44px;
+
+// Colors ----------------------------------
+
+// If you change any of these, you'll need to update assets:
+// - five-color.png
 $red: #d60a0a;
-$yellow: #edd310;
+// $yellow: #edd310; // current asset color
+$yellow: #ccb509; // need to update asset
 $green: #06ad1a;
 $blue: #115edb;
 $black: black;
