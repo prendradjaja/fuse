@@ -128,3 +128,20 @@ How to define Sass variables that can be reused across components:
 > It does not generate any CSS overhead in the components, you can leave ViewEncapsulation enabled and all is good.
 >
 > <p align="right"><sup>-- https://github.com/angular/angular-cli/issues/1253#issuecomment-305972033</sup></p>
+
+----
+
+I need to learn some design software! Currently I'm literally using:
+
+[Google Slides](https://docs.google.com/presentation/d/1VDWIR3EjFYsjp0rZnK7N97ekHDtbN-yboASbJzaILhs/edit#slide=id.p)
+- five-color.png
+
+[maketext.io](https://maketext.io) ([config](./JOURNAL.md.d/make-text.io.config)
+- equal.svg
+- not-equal.svg
+
+Learned: How to include images (and background images) in an Angular project!
+- `<img src="assets/foo.png">`
+- `background: url(src/assets/foo.png)`
+
+N.B. One uses src and the other does not! No idea why. Also not sure about relative/absolute URLs etc here, but this works at least.

@@ -1,7 +1,4 @@
-$card-aspect-ratio: 357 / 251;
-$card-width: 357px;
-$card-height: $card-width / $card-aspect-ratio;
-$whitespace-height: $card-height * 0.5;
+@import "src/variables.scss"; // todo: Is this a relative path?
 
 :host {
   display: block;

@@ -1,0 +1,16 @@
+// todo: Will this file get compiled? My intent is to avoid generating an CSS (by only defining variables to be used in component stylesheets)
+$card-aspect-ratio: 357 / 251;
+$card-width: 357px;
+$card-height: $card-width / $card-aspect-ratio;
+$whitespace-height: $card-height * 0.5;
+
+$slot-width: $card-width / 5;
+$slot-height: $slot-width;
+
+$red: #d60a0a;
+$yellow: #edd310;
+$green: #06ad1a;
+$blue: #115edb;
+$black: black;
+
+$images: url(src/assets/equal.svg) url(src/assets/not-equal.svg);
