@@ -1,9 +1,11 @@
-<div class="white">
+<div class="white"
+    [ngClass]="{
+      'hide': !!die
+    }">
   <div #actualSlot
       class="actual-slot"
       [ngClass]="{
-        'five-color': fiveColor,
-        'hide': !!die
+        'five-color': fiveColor
       }">
   </div>
 </div>
