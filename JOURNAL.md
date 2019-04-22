@@ -169,3 +169,5 @@ Interesting generalizable UI question: If you have a collection of items of diff
 I think I have a reasonably good way to declaratively describe most bomb cards. There are a few this sort of thing doesn't cover, though.
 
 Next thing to learn: How do I dynamically add components in Angular? I found some stuff online. Here's the only currently-working fiddle I could find: https://stackblitz.com/edit/add-or-remove-dynamic-component
+
+...wait, do I need to dynamically add components? Not sure. Good old `*ngFor` might be sufficient..?

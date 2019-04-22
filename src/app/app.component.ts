@@ -16,10 +16,16 @@ export interface Die {
 
 const ALL_BOMB_CARDS = [
   {
-    items: "target.five, neq, target.five, eq, target.five",
+    items: "target.five, eq, target.five, eq, target.five",
     constraints: [
-      "neq-color 1 2", //
+      "eq-color 1 2", //
       "eq-color 2 3"
+    ]
+  },
+  {
+    items: "target.five, neq, target.five",
+    constraints: [
+      "neq-color 1 2" //
     ]
   }
 ];
