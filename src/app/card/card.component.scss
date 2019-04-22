@@ -17,7 +17,7 @@
 
     box-sizing: border-box;
     border: gray 2px solid;
-    border-radius: 8px;
+    border-radius: $border-radius-medium;
     width: $card-width;
     height: $card-height;
   }

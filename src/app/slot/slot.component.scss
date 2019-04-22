@@ -4,12 +4,14 @@
   .white {
     // This is just a background for .actual-slot:not(.has-die) to be translucent against
     background: white;
+    border-radius: $border-radius-medium;
   }
 
   .actual-slot {
     box-sizing: border-box;
 
-    border: 2px solid black;
+    // border: 2px solid black;
+    border-radius: $border-radius-medium;
     background: white;
     height: $slot-height;
     width: $slot-width;
@@ -71,7 +73,7 @@
 
     height: $slot-height;
     width: $slot-width;
-    border-radius: 8px; // todo: Should the border of the slot "below" the die peek out?
+    border-radius: $border-radius-medium; // todo: Should the border of the slot "below" the die peek out?
     color: white;
     font-weight: bold;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
