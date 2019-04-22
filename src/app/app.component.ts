@@ -24,6 +24,9 @@ export class AppComponent implements OnInit {
   filledSlot: SlotComponent;
 
   ngOnInit(): void {
-    this.filledSlot.placeDie({ color: "yellow" as any, number: 5 });
+    this.filledSlot.placeDie({
+      color: "yellow" as DieColor,
+      number: 5
+    });
   }
 }
