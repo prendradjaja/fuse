@@ -163,3 +163,9 @@ Interesting generalizable UI question: If you have a collection of items of diff
 - This came up in Bookworm as "how do I show which date I'm filtering by?"
 - This exists in Google Photos -- their solution is to shrink the selected items
 - In Fuse, I need a way to make slots that have no dice stand out visually from slots that do have dice
+
+----
+
+I think I have a reasonably good way to declaratively describe most bomb cards. There are a few this sort of thing doesn't cover, though.
+
+Next thing to learn: How do I dynamically add components in Angular? I found some stuff online. Here's the only currently-working fiddle I could find: https://stackblitz.com/edit/add-or-remove-dynamic-component
