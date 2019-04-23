@@ -218,7 +218,7 @@ This simple card is generated with the following code!
 }
 ```
 
-```
+```typescript
 @Component(...)
 export class CardComponent ... {
   @Input() card: BombCardJSON;
