@@ -178,3 +178,4 @@ Next thing to learn: How do I dynamically add components in Angular? I found som
 - [ ] Change units from pixels to multiples of a slot width? Maybe?
   - [ ] Prereq maybe: Finalize design
 - [ ] Unit tests for parser services
+- [ ] Use Router to create a devtools page
