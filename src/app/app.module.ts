@@ -16,7 +16,7 @@ import { EqComponent } from "./eq/eq.component";
     EqComponent
   ],
   imports: [BrowserModule],
-  entryComponents: [SlotComponent],
+  entryComponents: [SlotComponent, EqComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

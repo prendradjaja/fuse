@@ -34,13 +34,13 @@ const ALL_BOMB_CARDS = [
 ];
 
 const DEMO_BOMB_CARDS = [
-  // {
-  //   items: "target.rainbow, eq, target.rainbow, eq, target.rainbow",
-  //   constraints: [
-  //     "eq-color 1 2", //
-  //     "eq-color 2 3"
-  //   ]
-  // },
+  {
+    items: "target.rainbow, eq, target.rainbow, eq, target.rainbow",
+    constraints: [
+      "eq-color 1 2", //
+      "eq-color 2 3"
+    ]
+  },
   {
     items: "target, target.rainbow",
     constraints: []

@@ -10,6 +10,7 @@ import { BombCardJSON, BombParserService } from "../bomb-parser.service";
 import { Item } from "../items-parser.service";
 import { SlotComponent } from "../slot/slot.component";
 import { ItemInsertionPointDirective } from "../item-insertion-point.directive";
+import { EqComponent } from "../eq/eq.component";
 
 // todo rename to BombCardComponent?
 @Component({
@@ -51,6 +52,9 @@ export class CardComponent implements OnInit {
     const slotComponentFactory = this.componentFactoryResolver.resolveComponentFactory(
       SlotComponent
     );
+    const eqComponentFactory = this.componentFactoryResolver.resolveComponentFactory(
+      EqComponent
+    );
     const viewContainerRef = this.anchor.viewContainerRef;
 
     if (_item.name === "target") {
@@ -61,6 +65,10 @@ export class CardComponent implements OnInit {
       if (_item.attributes && _item.attributes.includes("rainbow")) {
         item.fiveColor = true;
       }
+      return item;
+    } else if (_item.name === "eq") {
+      const componentRef = viewContainerRef.createComponent(eqComponentFactory);
+      const item = componentRef.instance;
       return item;
     } else {
       throw new Error("not implemented");
