@@ -203,6 +203,14 @@ White glyphs
 
 4-ary constraint
 
+----
+
+Started on making CardComponent generate its contents from the parse result.
+
+Continue tomorrow at:
+- CardComponent should be able to generate everything in `DEMO_BOMB_CARDS`, including what I commented out.
+- Then do constraints and some temp interactivity to test constraints with.
+
 
 ## To do
 

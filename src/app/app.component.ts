@@ -19,17 +19,35 @@ export interface Die {
 
 const ALL_BOMB_CARDS = [
   {
-    items: "target.five, eq, target.five, eq, target.five",
+    items: "target.rainbow, eq, target.rainbow, eq, target.rainbow",
     constraints: [
       "eq-color 1 2", //
       "eq-color 2 3"
     ]
   },
   {
-    items: "target.five, neq, target.five",
+    items: "target.rainbow, neq, target.rainbow",
     constraints: [
       "neq-color 1 2" //
     ]
+  }
+];
+
+const DEMO_BOMB_CARDS = [
+  // {
+  //   items: "target.rainbow, eq, target.rainbow, eq, target.rainbow",
+  //   constraints: [
+  //     "eq-color 1 2", //
+  //     "eq-color 2 3"
+  //   ]
+  // },
+  {
+    items: "target",
+    constraints: []
+  },
+  {
+    items: "target, target.rainbow",
+    constraints: []
   }
 ];
 
@@ -41,6 +59,8 @@ const ALL_BOMB_CARDS = [
 export class AppComponent implements OnInit {
   @ViewChild("filledSlot")
   filledSlot: SlotComponent;
+
+  demoBombCards = DEMO_BOMB_CARDS;
 
   constructor(
     private itemsParser: ItemsParserService,
@@ -57,6 +77,6 @@ export class AppComponent implements OnInit {
 
     // this.itemsParser.demo();
     // this.constraintsParser.demo();
-    this.bombParser.demo();
+    // this.bombParser.demo();
   }
 }

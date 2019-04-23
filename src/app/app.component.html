@@ -1,5 +1,5 @@
 <div class="cards">
-  <card>
+  <!-- <card>
     <slot twoColor="red, green"></slot>
     <slot></slot>
     <slot fiveColor="true"></slot>
@@ -9,5 +9,12 @@
   <card>
     <slot #filledSlot></slot>
     <slot></slot>
-  </card>
+  </card> -->
+
+  <!-- <card>
+    <eq></eq>
+  </card> -->
+
+  <card *ngFor="let cardJson of demoBombCards" [card]="cardJson"></card>
+  <eq></eq>
 </div>

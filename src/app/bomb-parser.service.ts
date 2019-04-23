@@ -6,7 +6,7 @@ import {
 } from "./constraints-parser.service";
 
 // todo i hate using JSON in names, but what's a better concise way of saying "this is something in my bomb card description language"
-interface BombCardJSON {
+export interface BombCardJSON {
   items: string;
   constraints: string[];
 }
@@ -96,6 +96,8 @@ const examples = [
 // target.numrainbowboth
 // - this is used for this card
 //   "target.numrainbowboth eq target.numrainbowboth" (difficulty 4)
+
+// todo need both ghost slots and slot pics for stacks & pyramids
 
 // STACKS
 // stack(slot.red, slot.green, slot.blue)

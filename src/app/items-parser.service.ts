@@ -8,7 +8,7 @@ const examples = [
 
 export interface Item {
   name: string;
-  attributes?: string[];
+  attributes?: string[]; // todo should this be required
 }
 
 @Injectable({

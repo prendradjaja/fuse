@@ -10,7 +10,7 @@ const examples = [
 
 export interface Constraint {
   name: string;
-  targets?: number[];
+  targets?: number[]; // todo should this be required
 }
 
 // todo rename to singular? (items parser parses multiple items, this parses a single constraint at a time)
