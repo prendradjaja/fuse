@@ -136,7 +136,7 @@ I need to learn some design software! Currently I'm literally using:
 [Google Slides](https://docs.google.com/presentation/d/1VDWIR3EjFYsjp0rZnK7N97ekHDtbN-yboASbJzaILhs/edit#slide=id.p)
 - five-color.png
 
-[maketext.io](https://maketext.io) ([config](./JOURNAL.md.d/make-text.io.config)
+[maketext.io](https://maketext.io) ([config](./JOURNAL.md.d/make-text.io.config))
 - equal.svg
 - not-equal.svg
 
