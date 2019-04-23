@@ -11,17 +11,16 @@ interface BombCardJSON {
   constraints: string[];
 }
 
-// todo rename five to rainbow
 const examples = [
   {
-    items: "target.five, eq, target.five, eq, target.five",
+    items: "target.rainbow, eq, target.rainbow, eq, target.rainbow",
     constraints: [
       "eq-color 1 2", //
       "eq-color 2 3"
     ]
   },
   {
-    items: "target.five, neq, target.five",
+    items: "target.rainbow, neq, target.rainbow",
     constraints: [
       "neq-color 1 2" //
     ]
