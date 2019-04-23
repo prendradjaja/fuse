@@ -4,7 +4,7 @@ const examples = [
   "eq-color 1 2", //
   "eq-color 2 3",
   "neq-color 1 2",
-  "foo",
+  "foo", // todo are there actually 0-ary constraints? if no, also change targets? to targets
   "bar 1 2 3"
 ];
 
