@@ -27,7 +27,7 @@ Stack and pyramid cards will extend a bit above the edge of the card
 
 ### Card representation
 
-![](https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/cards.jpg)
+<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/cards.jpg">
 
 <p align="center"><sup>Some examples of cards in Fuse.</sup></p>
 
@@ -56,6 +56,8 @@ I think the thing to do is represent card in terms of:
   - Most are also Targets: places where dice can actually go. Non-target slots are purely visual.
   - Some slots can be smaller or bigger. Some small slots are non-targets (in stacks and pyramids), and some are targets (in "greater than"/"less than" cards).
   - For stacks and pyramids, some slots are "ghost"-styled.
+
+(Edit 4/22: Maybe this can be made clearer by just saying slot / target / ghost, perhaps instead of having this 2x2 taxonomy. there's no such thing as a ghost non-target slot soooo)
 
 To make this clearer, here's a diagram:
 
@@ -172,7 +174,13 @@ Next thing to learn: How do I dynamically add components in Angular? I found som
 
 ~~...wait, do I need to dynamically add components? Not sure. Good old `*ngFor` might be sufficient..?~~
 
-Definitely need to dynamically add components for card contents
+Definitely need to dynamically add components for card contents (since you don't know what component you're generating. I guess you could technically use a bunch of ngIfs in a template but screw that)
+
+## 4/22
+
+Wrote parsers and unit tests.
+
+Looked at the rest of the cards in the deck and found some interesting things. I will have to extend my parser a bit.
 
 
 ## To do
