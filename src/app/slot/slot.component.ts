@@ -9,6 +9,8 @@ import {
 } from "@angular/core";
 import { DieColor, Die } from "../app.component";
 
+// todo slots vs targets
+
 @Component({
   selector: "slot",
   templateUrl: "./slot.component.html",
@@ -58,5 +60,16 @@ export class SlotComponent implements OnInit {
 
   canPlaceDie(die: Die): boolean {
     return true;
+  }
+
+  public handleClick() {
+    const s = prompt("Place a die, e.g. red 2");
+    const [color, numberString] = s.split(" ");
+    const number = +numberString;
+    // todo no error handling (e.g. malformed strings, bad colors, nums outside of 1-6)
+    const die = { color: color as any, number: number as any };
+    if (this.canPlaceDie(die)) {
+      this.placeDie(die);
+    }
   }
 }
