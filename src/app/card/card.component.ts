@@ -41,13 +41,21 @@ export class CardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    const foos = (window["cards"] = window["cards"] || []); // ptodo-debug
+    const el = this["pdebugEl"] && this["pdebugEl"]["nativeElement"];
+    el && el.setAttribute("pdebugIndex", "card." + foos.length);
+    foos.push(this);
+    window["card"] = this;
+
     const { items, constraints } = this.bombParser.parse(this.card);
     this._items = items;
     this._constraints = constraints;
 
-    this._items.forEach(x => this.addItem(x));
+    this.items = this._items.map(x => this.addItem(x));
+    this.targets = this.items.filter(x => x instanceof SlotComponent);
   }
 
+  // Create the component AND return it
   private addItem(_item: Item) {
     const slotComponentFactory = this.componentFactoryResolver.resolveComponentFactory(
       SlotComponent

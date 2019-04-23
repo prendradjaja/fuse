@@ -5,9 +5,11 @@ import {
   HostBinding,
   ViewChild,
   ElementRef,
-  Renderer2
+  Renderer2,
+  Host
 } from "@angular/core";
 import { DieColor, Die } from "../app.component";
+import { CardComponent } from "../card/card.component";
 
 // todo slots vs targets
 
@@ -31,7 +33,10 @@ export class SlotComponent implements OnInit {
 
   die: Die;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    @Host() private parent: CardComponent // Instead of this, maybe can put the canPlaceDie logic up in Card? worth exploring all the different architecture possibilities. also even if we keep this idea (child getting info from parent), there are a couple different ways of doing that that might be worth exploring
+  ) {}
 
   ngOnInit() {
     const foos = (window["slots"] = window["slots"] || []); // ptodo-debug
