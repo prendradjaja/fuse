@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { SlotComponent } from "./slot/slot.component";
+import { ItemsParserService } from "./items-parser.service";
+import { ConstraintsParserService } from "./constraints-parser.service";
 
 export enum DieColor {
   red = "red",
@@ -39,10 +41,19 @@ export class AppComponent implements OnInit {
   @ViewChild("filledSlot")
   filledSlot: SlotComponent;
 
+  constructor(
+    private itemsParser: ItemsParserService,
+    private constraintsParser: ConstraintsParserService
+  ) {}
+
   ngOnInit(): void {
-    this.filledSlot.placeDie({
-      color: "yellow" as DieColor,
-      number: 5
-    });
+    this.filledSlot &&
+      this.filledSlot.placeDie({
+        color: "yellow" as DieColor,
+        number: 5
+      });
+
+    this.itemsParser.demo();
+    this.constraintsParser.demo();
   }
 }
