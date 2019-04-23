@@ -182,6 +182,11 @@ Wrote parsers and unit tests.
 
 Looked at the rest of the cards in the deck and found some interesting things. I will have to extend my parser a bit.
 
+<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-misc.jpg">
+<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-numrainbow.jpg">
+<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-quaternary.jpg">
+<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-white-glyphs.jpg">
+
 
 ## To do
 
