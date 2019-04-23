@@ -123,7 +123,7 @@ How to define Sass variables that can be reused across components:
 >
 > This stylesheet is then imported on top of the component sass stylesheets.
 >
-> @import "./src/assets/private/sass/base";
+> `@import "./src/assets/private/sass/base";`
 >
 > It does not generate any CSS overhead in the components, you can leave ViewEncapsulation enabled and all is good.
 >
