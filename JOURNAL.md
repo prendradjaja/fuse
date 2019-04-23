@@ -170,7 +170,9 @@ I think I have a reasonably good way to declaratively describe most bomb cards. 
 
 Next thing to learn: How do I dynamically add components in Angular? I found some stuff online. Here's the only currently-working fiddle I could find: https://stackblitz.com/edit/add-or-remove-dynamic-component
 
-...wait, do I need to dynamically add components? Not sure. Good old `*ngFor` might be sufficient..?
+~~...wait, do I need to dynamically add components? Not sure. Good old `*ngFor` might be sufficient..?~~
+
+Definitely need to dynamically add components for card contents
 
 
 ## To do
