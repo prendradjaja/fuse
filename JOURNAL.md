@@ -178,14 +178,30 @@ Definitely need to dynamically add components for card contents (since you don't
 
 ## 4/22
 
+Thought about layout some. Might write up my thoughts tomorrow.
+
 Wrote parsers and unit tests.
 
 Looked at the rest of the cards in the deck and found some interesting things. I will have to extend my parser a bit.
 
 <img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-misc.jpg" width="400">
-<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-numrainbow.jpg">
-<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-quaternary.jpg">
-<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-white-glyphs.jpg">
+
+1. Visual: Need to have half-color half-number slot
+2. Visual: Stacks can have arrows on top or bottom
+3. Visual: Lots of different sizes!
+4. Visual: All this stuff can happen in pyramids, too
+
+<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-numrainbow.jpg" width="400">
+
+`numrainbow` and `numrainbowboth`
+
+<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-white-glyphs.jpg" width="400">
+
+White glyphs
+
+<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/interesting-cards-quaternary.jpg" width="400">
+
+4-ary constraint
 
 
 ## To do

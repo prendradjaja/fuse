@@ -51,6 +51,9 @@ const examples = [
 // OTHER UI ELTS
 // number(1)
 // br
+// spacer
+// nbsp?
+// - or maybe introduce a grouping operator?
 
 // COMBINING THINGS
 // target.numsign.small
