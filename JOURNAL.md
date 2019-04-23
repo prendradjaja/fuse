@@ -205,7 +205,56 @@ White glyphs
 
 ----
 
-Started on making CardComponent generate its contents from the parse result.
+Started on making CardComponent generate its contents from the parse result. EXCITING.
+
+<img src="https://raw.githubusercontent.com/prendradjaja/fuse/master/JOURNAL.md.d/dsl.png">
+
+This simple card is generated with the following code!
+
+```
+{
+  items: "target, target.rainbow",
+  constraints: []
+}
+```
+
+```
+@Component(...)
+export class CardComponent ... {
+  @Input() card: BombCardJSON;
+  @ViewChild(ItemInsertionPointDirective) anchor: ItemInsertionPointDirective;
+
+  constructor(
+    private bombParser: BombParserService,
+    private componentFactoryResolver: ComponentFactoryResolver
+  ) {}
+
+  ngOnInit() {
+    const { items } = this.bombParser.parse(this.card);
+    items.forEach(x => this.addItem(x));
+  }
+
+  private addItem(_item: Item) {
+    const slotComponentFactory = this.componentFactoryResolver.resolveComponentFactory(
+      SlotComponent
+    );
+    const viewContainerRef = this.anchor.viewContainerRef;
+
+    if (_item.name === "target") {
+      const componentRef = viewContainerRef.createComponent(
+        slotComponentFactory
+      );
+      const item = componentRef.instance;
+      if (_item.attributes && _item.attributes.includes("rainbow")) {
+        item.fiveColor = true;
+      }
+      return item;
+    } else {
+      throw new Error("not implemented");
+    }
+  }
+}
+```
 
 Continue tomorrow at:
 - CardComponent should be able to generate everything in `DEMO_BOMB_CARDS`, including what I commented out.

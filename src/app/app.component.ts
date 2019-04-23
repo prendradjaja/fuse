@@ -42,10 +42,6 @@ const DEMO_BOMB_CARDS = [
   //   ]
   // },
   {
-    items: "target",
-    constraints: []
-  },
-  {
     items: "target, target.rainbow",
     constraints: []
   }

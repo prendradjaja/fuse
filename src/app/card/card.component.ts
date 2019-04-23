@@ -57,11 +57,11 @@ export class CardComponent implements OnInit {
       const componentRef = viewContainerRef.createComponent(
         slotComponentFactory
       );
-      const instance = componentRef.instance;
+      const item = componentRef.instance;
       if (_item.attributes && _item.attributes.includes("rainbow")) {
-        instance.fiveColor = true;
+        item.fiveColor = true;
       }
-      return instance;
+      return item;
     } else {
       throw new Error("not implemented");
     }
