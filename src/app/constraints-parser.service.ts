@@ -8,11 +8,12 @@ const examples = [
   "bar 1 2 3"
 ];
 
-interface Constraint {
+export interface Constraint {
   name: string;
   targets?: number[];
 }
 
+// todo rename to singular? (items parser parses multiple items, this parses a single constraint at a time)
 @Injectable({
   providedIn: "root"
 })

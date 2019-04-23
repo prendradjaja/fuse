@@ -6,7 +6,7 @@ const examples = [
   "foo.bar.baz, fubar"
 ];
 
-interface Item {
+export interface Item {
   name: string;
   attributes?: string[];
 }

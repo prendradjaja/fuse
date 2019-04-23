@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { SlotComponent } from "./slot/slot.component";
 import { ItemsParserService } from "./items-parser.service";
 import { ConstraintsParserService } from "./constraints-parser.service";
+import { BombParserService } from "./bomb-parser.service";
 
 export enum DieColor {
   red = "red",
@@ -43,7 +44,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private itemsParser: ItemsParserService,
-    private constraintsParser: ConstraintsParserService
+    private constraintsParser: ConstraintsParserService,
+    private bombParser: BombParserService
   ) {}
 
   ngOnInit(): void {
@@ -53,7 +55,8 @@ export class AppComponent implements OnInit {
         number: 5
       });
 
-    this.itemsParser.demo();
-    this.constraintsParser.demo();
+    // this.itemsParser.demo();
+    // this.constraintsParser.demo();
+    this.bombParser.demo();
   }
 }
