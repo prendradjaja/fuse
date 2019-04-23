@@ -257,8 +257,15 @@ export class CardComponent ... {
 ```
 
 Continue tomorrow at:
-- CardComponent should be able to generate everything in `DEMO_BOMB_CARDS`, including what I commented out.
-- Then do constraints and some temp interactivity to test constraints with.
+- [x] Generate eq items
+- [ ] Constraints
+
+## 4/23
+
+Starting on constraints. Probably will explore a few different ways of implementing this.
+
+Branches:
+- `constraints-1--parent-reference`
 
 
 ## To do
