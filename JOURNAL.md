@@ -265,7 +265,7 @@ Continue tomorrow at:
 Implemented constraints! This implementation involves a circular reference. Will probably try a few different ways of implementing this.
 
 Branches:
-- `constraints-1--parent-reference`
+- `constraints-1--parent-reference` [Arch doc](./JOURNAL.md.d/constraints-architecture-1.md)
 
 
 ## To do
