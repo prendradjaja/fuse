@@ -10,6 +10,8 @@ import {
 } from "@angular/core";
 import { DieColor, Die } from "../app.component";
 import { CardComponent } from "../card/card.component";
+import { zip } from "lodash";
+import { ActualConstraint } from "../constraint.service";
 
 // todo slots vs targets
 
@@ -30,6 +32,9 @@ export class SlotComponent implements OnInit {
 
   @ViewChild("dieEl")
   dieEl: ElementRef;
+
+  @Input()
+  index: number; // index of this target in the parent
 
   die: Die;
 
@@ -64,7 +69,17 @@ export class SlotComponent implements OnInit {
   }
 
   canPlaceDie(die: Die): boolean {
-    return true;
+    return this.getRelevantConstraints().every(f =>
+      f(this.parent.targets, die, this.index)
+    );
+  }
+
+  private getRelevantConstraints(): ActualConstraint[] {
+    return zip(this.parent._constraints, this.parent.constraints)
+      .filter(([constraint, _]) => {
+        return constraint.targets && constraint.targets.includes(this.index);
+      })
+      .map(([_, actualConstraint]) => actualConstraint);
   }
 
   public handleClick() {

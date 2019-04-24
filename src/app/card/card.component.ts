@@ -11,6 +11,8 @@ import { Item } from "../items-parser.service";
 import { SlotComponent } from "../slot/slot.component";
 import { ItemInsertionPointDirective } from "../item-insertion-point.directive";
 import { EqComponent } from "../eq/eq.component";
+import { ConstraintService, ActualConstraint } from "../constraint.service";
+import { Constraint } from "../constraints-parser.service";
 
 // todo rename to BombCardComponent?
 @Component({
@@ -27,17 +29,20 @@ export class CardComponent implements OnInit {
   private _items;
   // target.rainbow
   // target
-  private _constraints;
+  public _constraints: Constraint[];
   // eq-color
 
   // not-underscore properties are actual things
   private items;
-  private constraints;
-  private targets;
+  public constraints: ActualConstraint[];
+  public targets;
+
+  private index = 0;
 
   constructor(
     private bombParser: BombParserService,
-    private componentFactoryResolver: ComponentFactoryResolver
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private constraintService: ConstraintService
   ) {}
 
   ngOnInit() {
@@ -53,6 +58,9 @@ export class CardComponent implements OnInit {
 
     this.items = this._items.map(x => this.addItem(x));
     this.targets = this.items.filter(x => x instanceof SlotComponent);
+    this.constraints = this._constraints.map(x =>
+      this.constraintService.createBinaryConstraint(x)
+    );
   }
 
   // Create the component AND return it
@@ -73,6 +81,8 @@ export class CardComponent implements OnInit {
       if (_item.attributes && _item.attributes.includes("rainbow")) {
         item.fiveColor = true;
       }
+      item.index = this.index;
+      this.index++;
       return item;
     } else if (_item.name === "eq") {
       const componentRef = viewContainerRef.createComponent(eqComponentFactory);

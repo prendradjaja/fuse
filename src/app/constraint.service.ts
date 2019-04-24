@@ -3,6 +3,14 @@ import { Constraint } from "./constraints-parser.service";
 import { SlotComponent } from "./slot/slot.component";
 import { Die } from "./app.component";
 
+// todo update all the examples to be zero-indexed
+
+export type ActualConstraint = (
+  slots: SlotComponent[],
+  proposedDie: Die,
+  proposedSlotIndex: number
+) => any;
+
 @Injectable({
   providedIn: "root"
 })
@@ -12,25 +20,37 @@ export class ConstraintService {
   createBinaryConstraint(constraint: Constraint) {
     let f: Function;
     if (constraint.name === "eq-color") {
-      // f =
+      f = (a: Die, b: Die) => {
+        return a.color === b.color;
+      };
     } else {
       throw new Error("not implemented");
     }
 
-    return function(
-      slots: SlotComponent[], // is this all the slots in the card or just the slots necessary for f?
+    return (
+      slots: SlotComponent[],
       proposedDie: Die,
       proposedSlotIndex: number
-    ) {
+    ) => {
       // todo slots themselves should reject placement if already have die. can manually test this by adding Slot.handleClick to dice too (not just actualSlots)
-      const values = slots.map(x => x.die);
-      values[proposedSlotIndex] = proposedDie;
-      if (!values.every(x => !!x)) {
+      const allDice = slots.map(x => x.die);
+      allDice[proposedSlotIndex] = proposedDie;
+
+      const allRelevantDice = allDice.filter((_, i) =>
+        constraint.targets.includes(i)
+      );
+
+      // check a dice is in every slot
+      if (!allRelevantDice.every(x => !!x)) {
         // Constraints only take effect once every other slot is full
         return true;
       }
 
-      // return f(...)
+      const [slotAIndex, slotBIndex] = constraint.targets;
+      const dieA = allDice[slotAIndex];
+      const dieB = allDice[slotBIndex];
+
+      return f(dieA, dieB);
     };
   }
 }
