@@ -1,84 +1,119 @@
-hyphens are reserved for syntax sugar
-identifiers can only have a-z
+  hyphens are reserved for syntax sugar
+  identifiers can only have a-z
 
-todo maybe target should be named slot
-and slot should be named slotpic
-and ghost should be named ghostslot or slotghost?
-SLOTS ETC
-slot
-target
-ghost
-slot.question
-- used in the card containing "stack(slot.question, slot.question, ...)"
+DO WE NEED COMMAS BETWEEN THINGS
+- yes. without syntax highlighting it helps further separate things visually
 
-MATH
-lt
-gt
-eq
-neq
-plus
+ITEMS
+  SLOTS ETC -- MAYBE. see discussion below
+  slot
+  target
+  ghost
+  slot.question
+  - used in the card containing "stack(slot.question, slot.question, ...)"
 
-OTHER UI ELTS
-number(1)
-br
-spacer
-nbsp?
-- or maybe introduce a grouping operator?
+  MATH
+  lt
+  gt
+  eq
+  neq
+  plus
 
-COMBINING THINGS
-target.numsign.small
-target.num(2).small
-target.small.num(2)
-target.green.num(2)
+  OTHER UI ELTS
+  number(1)
+  br
+  spacer
+  nbsp?
+  - or maybe introduce a grouping operator?
 
-COLORS
-target.color(red)
-- maybe syntax sugar: target.red
-target.color(red, green)
-- maybe syntax sugar: target.red-green
-target.color(null, green)
-target.color(red, null)
-really only useful when combined with twocolor
+  COMBINING THINGS
+  target.numsign.small
+  target.num(2).small
+  target.small.num(2)
+  target.green.num(2)
 
-NUMBERS
-target.num(2)
-- maybe syntax sugar: target.num-2
-target.num(1, 4)
-- maybe syntax sugar: target.num-1-4
-target.numsign
-target.num(null, 4)
-target.num(4, null)
-- really only useful when combined with twocolor
-target.rainbow
+  COLORS
+  target.color(red)
+  - maybe syntax sugar: target.red
+  target.color(red, green)
+  - maybe syntax sugar: target.red-green
+  target.color(null, green)
+  target.color(red, null)
+  really only useful when combined with twocolor
 
-SIZES
-.xlarge .large .normal .small .xsmall
-- do i need all of these?
+  NUMBERS
+  target.num(2)
+  - maybe syntax sugar: target.num-2
+  target.num(1, 4)
+  - maybe syntax sugar: target.num-1-4
+  target.numsign
+  target.num(null, 4)
+  target.num(4, null)
+  - really only useful when combined with twocolor
+  target.rainbow
 
-THE WEIRDEST SLOTS
-target.numrainbow
-- this one is used for this card
-  "target.numrainbow eq target.numrainbow eq target.numrainbow" (difficulty 2)
-  i think this means that all three targets must be same color OR must be same number
-- it is also used for this card
-  "target.numsign eq target.numrainbow eq target.rainbow" (difficulty 1)
-  i think this means that btwn targets 1 and 2, number must match
-  and btwn targets 2 and 3, color must match
-target.numrainbowboth
-- this is used for this card
-  "target.numrainbowboth eq target.numrainbowboth" (difficulty 4)
+  SIZES
+  .xlarge .large .normal .small .xsmall
+  - do i need all of these?
 
-todo need both ghost slots and slot pics for stacks & pyramids
+  THE WEIRDEST SLOTS
+  target.numrainbow
+  - this one is used for this card
+    "target.numrainbow eq target.numrainbow eq target.numrainbow" (difficulty 2)
+    i think this means that all three targets must be same color OR must be same number
+  - it is also used for this card
+    "target.numsign eq target.numrainbow eq target.rainbow" (difficulty 1)
+    i think this means that btwn targets 1 and 2, number must match
+    and btwn targets 2 and 3, color must match
+  target.numrainbowboth
+  - this is used for this card
+    "target.numrainbowboth eq target.numrainbowboth" (difficulty 4)
 
-STACKS
-stack(slot.red, slot.green, slot.blue)
-stack(slot.numsign, gt, slot.numsign, gt, slot.numsign)
-- how should sizes interact with stacks?
-  option 1) stacks make every size mean something smaller
-  option 2) stacks make everything .small by default
-  option 3) stacks don't impact size, and you have to add .small manually
-stack.toparrow(slot.red, slot.green, slot.blue)
+  todo need both ghost slots and slot pics for stacks & pyramids
 
-PYRAMIDS
-pyramid(slot.yellow, slot.blue, slot.green)
-- three-item pyramid = two-row pyramid
+  STACKS
+  stack(slot.red, slot.green, slot.blue)
+  stack(slot.numsign, gt, slot.numsign, gt, slot.numsign)
+  - how should sizes interact with stacks?
+    option 1) stacks make every size mean something smaller
+    option 2) stacks make everything .small by default
+    option 3) stacks don't impact size, and you have to add .small manually
+  stack.toparrow(slot.red, slot.green, slot.blue)
+
+  PYRAMIDS
+  pyramid(slot.yellow, slot.blue, slot.green)
+  - three-item pyramid = two-row pyramid
+
+CONSTRAINTS
+
+PYRAMIDS AND STACKS
+  slotpics
+  - pyramidpic(slot, slot, ...)
+
+  actual targetable slots
+  - pyramid(n)
+
+SHOULD IT BE POSSIBLE FOR THE SAME IDENTIFIER TO REFER TO BOTH AN ITEM AND A CONSTRAINT
+  eq
+  num
+
+  ITEMS
+    eq
+    neq
+    lt
+    gt
+    plus
+    number  -- or num?
+
+  CONSTRAINTS
+    eq-color
+    eq-number
+
+SLOT NAMING
+  todo maybe target should be named slot
+  and slot should be named slotpic
+  and ghost should be named ghostslot or slotghost?
+
+  slot
+  slot.ghost
+  slotpic
