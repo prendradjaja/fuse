@@ -32,6 +32,8 @@ export class ConstraintService {
       proposedDie: Die,
       proposedSlotIndex: number
     ) => {
+      // todo** add some comments making it real obvious what's happening in this func
+
       // todo slots themselves should reject placement if already have die. can manually test this by adding Slot.handleClick to dice too (not just actualSlots)
       const allDice = slots.map(x => x.die);
       allDice[proposedSlotIndex] = proposedDie;
