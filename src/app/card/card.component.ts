@@ -59,6 +59,7 @@ export class CardComponent implements OnInit {
     this.items = this._items.map(x => this.addItem(x));
     this.targets = this.items.filter(x => x instanceof SlotComponent);
     this.constraints = this._constraints.map(x =>
+      // todo other arities
       this.constraintService.createBinaryConstraint(x)
     );
   }

@@ -16,6 +16,7 @@
     height: $slot-height;
     width: $slot-width;
 
+    cursor: pointer;
     &:hover {
       box-shadow: 4px 4px 4px orange;
     }

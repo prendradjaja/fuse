@@ -59,8 +59,10 @@ export class SlotComponent implements OnInit {
   /**
    * @returns true if successful
    */
+  // todo should caller or placeDie be responsible for checking legality?
   public placeDie(die: Die): boolean {
     if (!this.canPlaceDie(die)) {
+      console.log("Illegal placement (caught in placeDie)");
       return false;
     }
 
@@ -90,6 +92,8 @@ export class SlotComponent implements OnInit {
     const die = { color: color as any, number: number as any };
     if (this.canPlaceDie(die)) {
       this.placeDie(die);
+    } else {
+      console.log("Illegal placement (caught in handleClick)");
     }
   }
 }
