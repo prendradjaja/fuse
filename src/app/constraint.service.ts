@@ -5,6 +5,7 @@ import { Die } from "./app.component";
 
 // todo update all the examples to be zero-indexed
 
+// todo this is a name smell -- again, Constraint and Item (and Bomb?) should be renamed to something like ConstraintAST
 export type ActualConstraint = (
   slots: SlotComponent[],
   proposedDie: Die,
