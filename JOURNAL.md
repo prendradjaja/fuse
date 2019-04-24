@@ -262,7 +262,7 @@ Continue tomorrow at:
 
 ## 4/23
 
-Starting on constraints. Probably will explore a few different ways of implementing this.
+Implemented constraints! This implementation involves a circular reference. Will probably try a few different ways of implementing this.
 
 Branches:
 - `constraints-1--parent-reference`
