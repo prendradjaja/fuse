@@ -20,7 +20,7 @@ ITEMS
   plus
 
   OTHER UI ELTS
-  number(1)
+  num(1)
   br
   spacer
   nbsp?
@@ -85,8 +85,34 @@ ITEMS
   - three-item pyramid = two-row pyramid
 
 CONSTRAINTS
+  eqcolor
+  neqcolor
+  color(red)
+  - sugar: color-red
+  color(blue, green)
+  - sugar: color-blue-green
+
+  MATH
+  eq
+  - note this isn't called eqnum
+  neq
+  gt
+  lt
+  num(5)
+  - sugar: num-5
+  num(2, 3)
+  - sugar: num-2-3
+  sum(4)
+  - sugar: sum-4
+
+  WEIRD
+  (name?) a + b = c + d
+  (name?) all same color or all same number
+
 
 PYRAMIDS AND STACKS
+  TODO: should order in these be enforced via constraints?
+
   slotpics
   - pyramidpic(slot, slot, ...)
 
@@ -94,20 +120,10 @@ PYRAMIDS AND STACKS
   - pyramid(n)
 
 SHOULD IT BE POSSIBLE FOR THE SAME IDENTIFIER TO REFER TO BOTH AN ITEM AND A CONSTRAINT
-  eq
-  num
+YES
 
-  ITEMS
-    eq
-    neq
-    lt
-    gt
-    plus
-    number  -- or num?
-
-  CONSTRAINTS
-    eq-color
-    eq-number
+  eq -- element, constraint
+  num -- element, class, constraint
 
 SLOT NAMING
   todo maybe target should be named slot
