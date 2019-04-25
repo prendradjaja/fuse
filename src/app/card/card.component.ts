@@ -13,6 +13,8 @@ import { ItemInsertionPointDirective } from "../item-insertion-point.directive";
 import { EqComponent } from "../eq/eq.component";
 import { ConstraintService, ActualConstraint } from "../constraint.service";
 import { Constraint } from "../constraints-parser.service";
+import { Die } from "../app.component";
+import { zip } from "lodash";
 
 // todo rename to BombCardComponent?
 @Component({
@@ -29,13 +31,13 @@ export class CardComponent implements OnInit {
   private _items;
   // target.rainbow
   // target
-  public _constraints: Constraint[];
+  private _constraints: Constraint[];
   // eq-color
 
   // not-underscore properties are actual things
   private items;
-  public constraints: ActualConstraint[];
-  public targets;
+  private constraints: ActualConstraint[];
+  private targets;
 
   private index = 0;
 
@@ -82,7 +84,28 @@ export class CardComponent implements OnInit {
       if (_item.attributes && _item.attributes.includes("rainbow")) {
         item.fiveColor = true;
       }
-      item.index = this.index;
+      const slotIndex = this.index;
+      item.tryPlaceDie.subscribe((die: Die) => {
+        // get constraints
+        const relevantConstraints: ActualConstraint[] = zip(
+          this._constraints,
+          this.constraints
+        )
+          .filter(([constraint, _]) => {
+            return constraint.targets && constraint.targets.includes(slotIndex);
+          })
+          .map(([_, actualConstraint]) => actualConstraint);
+
+        const canPlaceDie = relevantConstraints.every(f =>
+          f(this.targets, die, slotIndex)
+        );
+
+        if (canPlaceDie) {
+          item.placeDie(die);
+        } else {
+          console.log("can't place die");
+        }
+      });
       this.index++;
       return item;
     } else if (_item.name === "eq") {

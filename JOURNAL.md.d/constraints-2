@@ -1,0 +1,40 @@
+v1: ----------------------------------------------------------------
+Parser.parse(Language) => AST
+
+ConstraintService.createConstraint(AST) =>
+  "ActualConstraint": (slots, proposedDie, proposedSlotIndex) => boolean
+
+CardComponent:
+  slots: SlotComponent[]
+  public constraints: ActualConstraint[]
+  public _constraints: ASTs
+
+SlotComponent:
+  index in parent
+  parent                            // is this bad? circular dep
+  placeDie()
+  canPlaceDie(..) needs:
+    parent constraints (& _constraints)
+    index
+    parent
+
+v2: ----------------------------------------------------------------
+Parser.parse(Language) => AST
+
+ConstraintService.createConstraint(AST) =>
+  "ActualConstraint": same as in v1
+
+SlotComponent:
+                       // key difference: no index, parent
+  @Output tryPlaceDie  // name?
+  placeDie
+
+CardComponent:
+  private constraints & _constraints      // key difference: private
+  private slots
+
+  handle child wants to place die:
+    get relevant constraints
+    evaluate them
+    if ok:
+      slot.placeDie        // is this the right way? direct method call
