@@ -5,9 +5,15 @@ import {
   HostBinding,
   ViewChild,
   ElementRef,
-  Renderer2
+  Renderer2,
+  Host,
+  Output,
+  EventEmitter
 } from "@angular/core";
 import { DieColor, Die } from "../app.component";
+import { CardComponent } from "../card/card.component";
+import { zip } from "lodash";
+import { ActualConstraint } from "../constraint.service";
 
 // todo slots vs targets
 
@@ -19,6 +25,9 @@ import { DieColor, Die } from "../app.component";
 export class SlotComponent implements OnInit {
   @Input()
   fiveColor: boolean;
+
+  @Output()
+  tryPlaceDie: EventEmitter<Die> = new EventEmitter();
 
   @Input()
   twoColor: string;
@@ -46,20 +55,12 @@ export class SlotComponent implements OnInit {
     }
   }
 
-  /**
-   * @returns true if successful
-   */
-  public placeDie(die: Die): boolean {
-    if (!this.canPlaceDie(die)) {
-      return false;
-    }
+  // todo (whether handled by me in placeDie or by caller in constraint) --
+  // are we prevented for placing die on filled slot?
 
+  public placeDie(die: Die): void {
     this.die = die;
     this.renderer.addClass(this.dieEl.nativeElement, this.die.color);
-  }
-
-  canPlaceDie(die: Die): boolean {
-    return true;
   }
 
   public handleClick() {
@@ -68,8 +69,6 @@ export class SlotComponent implements OnInit {
     const number = +numberString;
     // todo no error handling (e.g. malformed strings, bad colors, nums outside of 1-6)
     const die = { color: color as any, number: number as any };
-    if (this.canPlaceDie(die)) {
-      this.placeDie(die);
-    }
+    this.tryPlaceDie.emit(die);
   }
 }

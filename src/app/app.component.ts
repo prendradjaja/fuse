@@ -37,14 +37,14 @@ const DEMO_BOMB_CARDS = [
   {
     items: "target.rainbow, eq, target.rainbow, eq, target.rainbow",
     constraints: [
-      "eq-color 1 2", //
-      "eq-color 2 3"
+      "eq-color 0 1", //
+      "eq-color 1 2"
     ]
-  },
-  {
-    items: "target, target.rainbow",
-    constraints: []
   }
+  // {
+  //   items: "target, target.rainbow",
+  //   constraints: []
+  // }
 ];
 
 @Component({
